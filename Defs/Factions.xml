@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="PeacefulProtesterBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>PeacefulProtesters</defaultFactionType>
+    <chemicalAddictionChance>0.45</chemicalAddictionChance>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>25</maxGenerationAge>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
+  </PawnKindDef>
+
+  <PawnKindDef Abstract="True" Name="PeacefulProtesterStudentBase" ParentName="PeacefulProtesterBase">
+    <race>Human</race>
+    <combatPower>65</combatPower>
+    <gearHealthRange>0.7~2.3</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>400~700</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <weaponMoney>500~500</weaponMoney>
+    <techHediffsChance>0.5</techHediffsChance>
+    <techHediffsMoney>500~500</techHediffsMoney>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PeacefulProtesterStudentBase">
+    <defName>PeacefulProtesterStudent</defName>
+    <label>student</label>
+    <canBeSapper>true</canBeSapper>
+    <weaponTags>
+      <li>GrenadeDestructive</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="PeacefulProtesterBase" Name="PeacefulProtesterCourierBase" Abstract="True">
+    <combatPower>90</combatPower>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1000~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <weaponMoney>330~650</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PeacefulProtesterCourierBase">
+    <defName>PeacefulProtesterCourier</defName>
+    <label>courier</label>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PeacefulProtesterBase" Name="PeacefulProtesterJoggerBase" Abstract="True">
+    <combatPower>150</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelMoney>300~1400</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <weaponMoney>200~500</weaponMoney>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PeacefulProtesterJoggerBase">
+    <defName>PeacefulProtesterJogger</defName>
+    <label>jogger</label>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PeacefulProtesterJoggerBase">
+    <defName>PeacefulProtesterLeader</defName>
+    <label>leader</label>
+    <factionLeader>true</factionLeader>
+    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
+  </PawnKindDef>
+
+  <FactionDef>
+    <defName>PeacefulProtesters</defName>
+    <label>peaceful protesters</label>
+    <pawnSingular>peaceful protester</pawnSingular>
+    <pawnsPlural>peaceful protesters</pawnsPlural>
+    <leaderTitle>Chief diplomat</leaderTitle>
+    <categoryTag>Tribal</categoryTag>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <fixedName>Black Lives Matter</fixedName>
+    <factionIconPath>PeacefulProtests/PeacefulProtestersFaction</factionIconPath>
+    <techLevel>Industrial</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pirate</li>
+          <li>Tribal</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <hidden>true</hidden>
+    <settlementTexturePath>PeacefulProtests/PeacefulProtestersFaction</settlementTexturePath>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <autoFlee>false</autoFlee>
+    <geneticVariance>0.6</geneticVariance>
+    <hairTags>
+      <li>Punk</li>
+    </hairTags>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35,     15)</li>
+        <li>(100,   120)</li>
+        <li>(1000,  500)</li>
+        <li>(2000,  800)</li>
+        <li>(4000, 1000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <PeacefulProtesterLeader>1</PeacefulProtesterLeader>
+          <PeacefulProtesterStudent>100</PeacefulProtesterStudent>
+          <PeacefulProtesterCourier>100</PeacefulProtesterCourier>
+          <PeacefulProtesterJogger>100</PeacefulProtesterJogger>
+        </options>
+      </li>
+
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <PeacefulProtesterStudent>100</PeacefulProtesterStudent>
+          <PeacefulProtesterCourier>1</PeacefulProtesterCourier>
+          <PeacefulProtesterJogger>1</PeacefulProtesterJogger>
+        </options>
+      </li>
+
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <PeacefulProtesterStudent>1</PeacefulProtesterStudent>
+          <PeacefulProtesterCourier>1</PeacefulProtesterCourier>
+          <PeacefulProtesterJogger>100</PeacefulProtesterJogger>
+        </options>
+      </li>
+
+    </pawnGroupMakers>
+    
+    <!-- XXX setting this to false breaks the game beause the faction does not have a leader. Relations to player are fixed in C# via harmony patch. -->
+    <permanentEnemy>true</permanentEnemy>
+  </FactionDef>
+
+</Defs>

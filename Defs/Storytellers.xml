@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StorytellerDef ParentName="BaseStoryteller">
+    <defName>PeacefulBlackMan</defName>
+    <label>George Floyd</label>
+    <description>George tells a sad but true story of change through peaceful protest. Witness firsthand how non-aggression can bring about progress.</description>
+    <portraitLarge>PeacefulProtests/PeacefulBlackMan</portraitLarge>
+    <portraitTiny>PeacefulProtests/PeacefulBlackManTiny</portraitTiny>
+    <listOrder>550</listOrder>
+    <comps>
+      <!-- Home all -->
+      <li Class="StorytellerCompProperties_RandomMain">
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>1</minDaysPassed>
+        <mtbDays>1</mtbDays>
+        <maxThreatBigIntervalDays>13</maxThreatBigIntervalDays>
+        <minIncChancePopulationIntentFactor>0.2</minIncChancePopulationIntentFactor>
+        <randomPointsFactorRange>1.0~1.1</randomPointsFactorRange>
+        <skipThreatBigIfRaidBeacon>true</skipThreatBigIfRaidBeacon>
+        <categoryWeights>
+          <PeacefulProtest>1.0</PeacefulProtest>
+        </categoryWeights>
+      </li>
+
+      <!-- Caravan / temp map -->
+      <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
+        <category>Misc</category>
+        <allowedTargetTags>
+          <li>Caravan</li>
+          <li>Map_TempIncident</li>
+        </allowedTargetTags>
+      </li>
+      <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
+        <category>ThreatSmall</category>
+        <applyCaravanVisibility>true</applyCaravanVisibility>
+        <allowedTargetTags>
+          <li>Caravan</li>
+          <li>Map_TempIncident</li>
+        </allowedTargetTags>
+      </li>
+      <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
+        <category>ThreatBig</category>
+        <applyCaravanVisibility>true</applyCaravanVisibility>
+        <allowedTargetTags>
+          <li>Caravan</li>
+          <li>Map_TempIncident</li>
+        </allowedTargetTags>
+      </li>
+      
+      <!-- Quests - non-Royalty -->
+      <li Class="StorytellerCompProperties_RandomQuest">
+        <category>GiveQuest</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <onDays>10</onDays>
+        <numIncidentsRange>1</numIncidentsRange>
+        <acceptFractionByDaysPassedCurve>
+          <points>
+            <li>(8, 0)</li>
+            <li>(15, 1)</li>
+          </points>
+        </acceptFractionByDaysPassedCurve>
+        <minSpacingDays>0.2</minSpacingDays>
+        <disableIfAnyModActive>
+          <li>Ludeon.RimWorld.Royalty</li>
+        </disableIfAnyModActive>
+      </li>
+      
+      <!-- Quests - Royalty -->
+      <li Class="StorytellerCompProperties_RandomQuest">
+        <category>GiveQuest</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <onDays>12</onDays>
+        <numIncidentsRange>1~3</numIncidentsRange>
+        <acceptFractionByDaysPassedCurve>
+          <points>
+            <li>(8, 0)</li>
+            <li>(15, 1)</li>
+          </points>
+        </acceptFractionByDaysPassedCurve>
+        <minSpacingDays>0.2</minSpacingDays>
+        <enableIfAnyModActive>
+          <li>Ludeon.RimWorld.Royalty</li>
+        </enableIfAnyModActive>
+      </li>
+      
+      <!-- World misc incidents-->
+      <li Class="StorytellerCompProperties_CategoryMTB">
+        <category>Misc</category>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <minDaysPassed>1</minDaysPassed>
+        <mtbDays>15</mtbDays>
+      </li>
+      
+    </comps>
+  </StorytellerDef>
+
+</Defs>

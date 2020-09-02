@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <MessagePeacefulProtestersGivenUpLeaving>{0} from {1} are leaving.</MessagePeacefulProtestersGivenUpLeaving>
+  <MessagePeacefulProtestersSatisfiedLeaving>{0} from {1} are satisfied with the protest and are leaving.</MessagePeacefulProtestersSatisfiedLeaving>
+  <MessagePeacefulProtestersMedics>{0} from {1} have decided to rescue downed colonists and deliver them to nearest hospital.</MessagePeacefulProtestersMedics>
+  <MessagePeacefulProtestersReparations>{0} from {1} have decided to engage in redistribution of wealth.</MessagePeacefulProtestersReparations>
+
+</LanguageData>

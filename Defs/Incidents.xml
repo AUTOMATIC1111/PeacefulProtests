@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentCategoryDef>
+    <defName>PeacefulProtest</defName>
+    <needsParmsPoints>true</needsParmsPoints>
+  </IncidentCategoryDef>
+  
+  <IncidentDef>
+    <defName>PeacefulProtest</defName>
+    <label>peaceful protest</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>PeacefulProtests.IncidentWorker_PeacefulProtest</workerClass>
+    <baseChance>1.0</baseChance>
+    <category>PeacefulProtest</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>PeacefulProtest</tale>
+  </IncidentDef>
+  
+  <TaleDef>
+    <defName>PeacefulProtest</defName>
+    <label>peaceful protest</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->a peaceful protest on [PAWN_nameDef]'s [Community]</li>
+        <li>tale_noun->an intense peaceful protest on [PAWN_nameDef]'s [Community]</li>
+        <li>tale_noun->[PAWN_nameDef]'s [Community] welcomes a protest by [Enemy]s</li>
+        <li>image->[Quantity_adjphrase] [Enemy]s [circumstance_phrase]</li>
+        <li>image->a samall group [circumstance_phrase]</li>
+        <li>image->a peaceful gathering [circumstance_phrase]</li>
+        <li>image->a protesting collection of non-threatening individuals [circumstance_phrase]</li>
+        <li>image->stylized [Color] banners [circumstance_phrase]</li>
+        <li>image->an enormous [Enemy] [circumstance_phrase]</li>
+        <li>circumstance_phrase->advancing the society over a [TerrainFeature]</li>
+        <li>circumstance_phrase->completely enriching a [Community]</li>
+        <li>circumstance_phrase->expressing peaceful inentions to [Quantity_adjphrase] [PersonJob]s</li>
+        <li>circumstance_phrase->roaring in solidarity</li>
+        <li>circumstance_phrase->lowering [Weapon]s</li>
+        <li>circumstance_phrase->covered in peaceful intentions</li>
+        <li>desc_sentence->[PAWN_nameDef] calls others to celebrate while [defender_circumstance].</li>
+        <li>desc_sentence->[PAWN_nameDef] lowers a [Weapon] while [defender_circumstance].</li>
+        <li>desc_sentence->[PAWN_nameDef] lies on the ground, content.</li>
+        <li>desc_sentence->[PAWN_nameDef] waves [PAWN_possessive] [Weapon] while [defender_circumstance].</li>
+        <li>desc_sentence->[PAWN_nameDef] stands as tall as a building, [defender_circumstance].</li>
+        <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveBadass] expression.</li>
+        <li>desc_sentence->[PAWN_nameDef] wears a [AdjectiveAngsty] expression.</li>
+        <li>desc_sentence->The ground is coated in peaceful intentions.</li>
+        <li>desc_sentence->[Quantity_adjphrase] [PersonJob]s show solidarity.</li>
+        <li>desc_sentence->[Quantity_adjphrase] [Animal]s show solidarity.</li>
+        <li>defender_circumstance->shouting emphatically</li>
+        <li>defender_circumstance->glowing [Color]</li>
+        <li>defender_circumstance->welcoming protesters with open arms</li>
+        <li>defender_circumstance->having trouble breathing</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <PawnsArrivalModeDef>
+    <defName>PeacefulProtest</defName>
+    <workerClass>PeacefulProtests.PawnsArrivalModeWorker_PeacefulProtest</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 1.0)</li>
+        <li>(700, 0.4)</li>
+      </points>
+    </selectionWeightCurve>
+    <textEnemy>A group of friendly {0} from {1} have arrived nearby.</textEnemy>
+    <textFriendly>A group of friendly {0} from {1} have arrived nearby.</textFriendly>
+    <textWillArrive>{0_pawnsPluralDef} will arrive on foot.</textWillArrive>
+    <walkIn>true</walkIn>
+  </PawnsArrivalModeDef>
+
+
+  <RaidStrategyDef>
+    <defName>PeacefulProtest</defName>
+    <workerClass>PeacefulProtests.RaidStrategyWorker_PeacefulProtest</workerClass>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(100,0.75)</li>
+        <li>(700,0.25)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 1</li>
+      </points>
+    </pointsFactorCurve>
+    <arriveModes>
+      <li>PeacefulProtest</li>
+    </arriveModes>
+    <letterLabelEnemy>Peaceful protesters</letterLabelEnemy>
+    <arrivalTextEnemy>They are starting their peaceful protest immediately.</arrivalTextEnemy>
+    <letterLabelFriendly>Peaceful protesters</letterLabelFriendly>
+    <arrivalTextFriendly>They are moving in to start a peaceful protest immediately.</arrivalTextFriendly>
+  </RaidStrategyDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>PeacefulProtester</defName>
+    <label>socioeconomic status</label>
+    <description>socioeconomic status</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <becomeVisible>false</becomeVisible>
+        <disabledWorkTags>
+            <li>AllWork</li>
+        </disabledWorkTags>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
